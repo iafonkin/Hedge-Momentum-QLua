@@ -1,4 +1,4 @@
--- dofile (getScriptPath().."\\monitorStepNRTR.lua") --ste
+
 
 -- Объявляем переменные
 is_run = true
