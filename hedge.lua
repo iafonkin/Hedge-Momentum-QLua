@@ -708,6 +708,10 @@ vuBildTable()
 			SetColor(t_id, 22, 3, RGB(80, 255, 40), RGB(0, 0, 0), RGB(80, 255, 40), RGB(0, 0, 0))
 		end
 
+		
+
+		SetCell (t_id, 23, 3, tostring( math.round(  FUT_POS * FutLot * (sec_price - a[13]) + ( FUT_POS * (a[12] - fut_price ) ), 2 ) ) )
+		
 
 		SetCell (t_id, 23, 3, tostring( math.round(  FUT_POS * FutLot * (sec_price - a[13]) + ( FUT_POS * (a[12] - fut_price ) ), 2 ) ) )
 		
