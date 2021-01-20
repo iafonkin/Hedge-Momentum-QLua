@@ -8,3 +8,11 @@ Tue Dec 15 14:58:56 2020 --- Script open
 Tue Dec 15 15:04:25 2020 --- Script close
 Tue Dec 15 15:09:18 2020 --- Script open
 Tue Dec 15 15:12:06 2020 --- Script close
+Mon Jan 18 10:28:59 2021 --- Script open
+Mon Jan 18 10:29:31 2021 --- new status = ON
+Mon Jan 18 19:40:49 2021 --- Script close
+Tue Jan 19 09:29:29 2021 --- Script open
+Tue Jan 19 19:52:45 2021 --- Script close
+Wed Jan 20 09:53:41 2021 --- Script open
+Wed Jan 20 09:54:19 2021 --- new status = OFF
+Wed Jan 20 09:55:12 2021 --- new status = ON
