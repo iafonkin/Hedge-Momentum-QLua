@@ -450,9 +450,9 @@ function momentum()
 	dannye()
         
 	if ds:Size() > period+2 then
-	res = ds:L(ds:Size()) / ds:L(ds:Size() - period) * 100
-	res1 = ds:L(ds:Size()-1) / ds:L(ds:Size() - period - 1) * 100
-	res2 = ds:L(ds:Size()-2) / ds:L(ds:Size() - period - 2) * 100
+	res = ds:C(ds:Size()) / ds:C(ds:Size() - period) * 100
+	res1 = ds:C(ds:Size()-1) / ds:C(ds:Size() - period - 1) * 100
+	res2 = ds:C(ds:Size()-2) / ds:C(ds:Size() - period - 2) * 100
 
 	end
 
