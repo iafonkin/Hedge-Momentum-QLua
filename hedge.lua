@@ -22,8 +22,8 @@ now_candle = 0
 RANDOM_SEED = tonumber(os.date("%Y%m%d%H%M%S")) -- для рандомной нумерации
 new_fut_name = ""
 
-avg_price = 0
-avg_price_sec = 0
+AVG_PRICE = 0
+AVG_PRICE_SEC = 0
 
 
 
@@ -58,8 +58,9 @@ function OnStop()
 		a[11] = status
 		a[9] = FUT_POS
 		a[8] = SEC_POS
-		a[12] = avg_price
-		a[13] = avg_price_sec
+		a[12] = AVG_PRICE
+		a[13] = AVG_PRICE_SEC
+		message("Closes-" .. tostring(AVG_PRICE))
 		for i=1,13 do
 			file:write(a[i] .. '\n')                        -- Прочитать первую строку в переменную x (без преобразования в число)
 		end
@@ -138,8 +139,9 @@ if file then                               -- Проверить, что он о
 		status = a[11]
 		FUT_POS = a[9]
 		SEC_POS = a[8]
-		avg_price = a[12]
-		avg_price_sec = a[13]
+		AVG_PRICE = a[12]
+		AVG_PRICE_SEC = a[13]
+		message("Open-" .. tostring(AVG_PRICE))
 		
 else
     message (err, 2)             -- Если не открылся, то вывести ошибку
@@ -458,7 +460,7 @@ function momentum()
 
 	--message("momentum - " .. res)
 
-	if status == "ON" and res < 100 and res1 >= 100 and res2 >=100 then
+	if status == "ON" and res < 100 and res1 >= 100  then
 		
 		status = "HEDGE"
 		AddLog ("new status = ".. status)
@@ -649,7 +651,7 @@ function OnOrder(order)
 				a[9] = pos_quantity
 				a[8] = Q_sec_h
 				-- вычисление руальной цены исполнения заявки
-					avg_price = 0
+					AVG_PRICE = 0
 					avg_qty = 0
 					avg_sum = 0
 					trt ={}	
@@ -661,8 +663,9 @@ function OnOrder(order)
 					end
 				
 				end
-						avg_price = avg_sum / avg_qty
-						avg_price_sec = getParamEx2( a[4], a[5], "LAST").param_value
+						AVG_PRICE = avg_sum / avg_qty
+						AVG_PRICE_SEC = getParamEx2( a[4], a[5], "LAST").param_value
+						message("Solve-" .. tostring(AVG_PRICE))
 				-- окончание вычисления цены исполнения
 		
 		end
